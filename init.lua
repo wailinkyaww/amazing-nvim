@@ -74,10 +74,10 @@ end
 vim.api.nvim_set_keymap('n', '<Leader>t', ':lua ToggleTerminal()<CR>', {noremap = true, silent = true})
 
 -- nv tree key bindings
-vim.api.nvim_set_keymap('n', '<Leader>nvtt', ':NvimTreeToggle', {noremap = true, silent = true})
-vim.api.nvim_set_keymap('n', '<Leader>nvtf', ':NvimTreeFocus', {noremap = true, silent = true})
-vim.api.nvim_set_keymap('n', '<Leader>nvtff', ':NvimTreeFindFile', {noremap = true, silent = true})
-vim.api.nvim_set_keymap('n', '<Leader>nvtc', ':NvimTreeCollapse', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<Leader>nvtt', ':NvimTreeToggle<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<Leader>nvtf', ':NvimTreeFocus<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<Leader>nvtff', ':NvimTreeFindFile<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<Leader>nvtc', ':NvimTreeCollapse<CR>', {noremap = true, silent = true})
 
 -- Customization ends
 
