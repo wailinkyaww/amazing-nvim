@@ -45,8 +45,13 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
 -- Customization starts
+vim.api.nvim_exec([[
+  tnoremap <Esc> <C-\><C-n>
+]], false)
+
 
 function ToggleTerminal()
+    local current_tab = vim.fn.tabpagenr()
     local found = false
     -- Iterate through each tab and window to find an existing terminal buffer
     for tab = 1, vim.fn.tabpagenr('$') do
@@ -68,6 +73,10 @@ function ToggleTerminal()
         -- Create a new terminal in a 10-line split at the bottom if no existing terminal is found
         vim.cmd('belowright 10split | terminal')
     end
+
+    -- Switch back to the original tab
+    vim.cmd(current_tab .. 'tabnext')
+
     vim.cmd('startinsert')
 end
 
@@ -122,8 +131,7 @@ require('lazy').setup({
     },
     lazy = false,
 },
-
-
+ 
   {
   "nvim-tree/nvim-tree.lua",
   version = "*",
